@@ -5,8 +5,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Card />
-      <Card />
-      <Card />
+      <Card titulo="luffy"/>
+      <Card titulo="cachorro"/>
     </View> 
   );
 }

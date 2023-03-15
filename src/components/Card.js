@@ -15,7 +15,7 @@ export default class Card extends Component{
                 }}
                 source={require('../fotos/luffy.jpg')}
                 />
-            <Text></Text> 
+            <Text> {this.props.titulo} </Text> 
         </View>
     )
 }
