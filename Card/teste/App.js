@@ -1,15 +1,13 @@
-import { StyleSheet,  View } from 'react-native';
-import Card from './src/components/Card';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Card   source={this.props.luffy}/>
-      <Card titulo="luffy"/>
-      <Card titulo="cachorro"/>
-    </View> 
+      <Text>Open up App.js to  working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
   );
-  
 }
 
 const styles = StyleSheet.create({

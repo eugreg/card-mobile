@@ -2,8 +2,11 @@ import { Component } from "react";
 import { View, Text, Image } from "react-native";
 
 export default class Card extends Component{
-
+    state = {
+        luffy : require('../fotos/luffy.jpg')
+    }
     render(){
+      
         return(
         <View>
             <Image
@@ -13,7 +16,7 @@ export default class Card extends Component{
                     height: 100,
                     width: 200,
                 }}
-                source={require('../fotos/luffy.jpg')}
+               
                 />
             <Text> {this.props.titulo} </Text> 
         </View>
