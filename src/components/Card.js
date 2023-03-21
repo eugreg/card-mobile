@@ -1,14 +1,15 @@
 import { Component } from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image,StyleSheet } from "react-native";
+
 
 export default class Card extends Component{
-    state = {
-        luffy : require('../fotos/luffy.jpg')
-    }
+    //  image  = {
+    //     luffy : require(" ./fotos/luffy.jpg")
+    // }
     render(){
       
         return(
-        <View>
+        <View >
             <Image
                 style={{
                     borderColor: 'red',
@@ -16,7 +17,7 @@ export default class Card extends Component{
                     height: 100,
                     width: 200,
                 }}
-               
+                source={this.props.caminho}
                 />
             <Text> {this.props.titulo} </Text> 
         </View>

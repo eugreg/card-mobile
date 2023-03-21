@@ -1,22 +1,43 @@
-import { StyleSheet,  View } from 'react-native';
-import Card from './src/components/Card';
+import { StyleSheet, View } from "react-native";
+import Card from "./src/components/Card";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Card   source={this.props.luffy}/>
-      <Card titulo="luffy"/>
-      <Card titulo="cachorro"/>
-    </View> 
+      <View style={styles.Conteudo}>
+        <view style={styles.Card}>
+          <Card
+            titulo="cachoro"
+            caminho={require("greg/src/fotos/luffy.jpg")}
+          />
+          <Card titulo="luffy" />
+          <Card titulo="cachorro" />
+        </view>
+      </View>
+    </View>
   );
-  
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: 10,
+    marginTop: 40,
+    backgroundColor: "#fff",
+  },
+  Conteudo: {
+    flex: 1,
+    backgroundColor: "#ccc",
+    paddingTop: 10,
+    alignItems: "center",
+    width: "100%",
+  },
+  Card: {
+    width: "40%",
+    height: 300,
+    backgroundColor: "green",
+    borderRadius: 10,
   },
 });
