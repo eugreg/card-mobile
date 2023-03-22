@@ -1,20 +1,40 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View,ScrollView } from "react-native";
 import Card from "./src/components/Card";
 
 export default function App() {
   return (
+    <ScrollView>
+
     <View style={styles.container}>
       <View style={styles.Conteudo}>
-        <view style={styles.Card}>
+        <View style={styles.Card}>
           <Card
-            titulo="cachoro"
-            caminho={require("greg/src/fotos/luffy.jpg")}
-          />
-          <Card titulo="luffy" />
-          <Card titulo="cachorro" />
-        </view>
+            caminho={{uri:'https://capas-m.imagemfilmes.com.br/164069_000_m.jpg'}}
+            titulo="O Grande Mauricinho"
+            sinopse="Mauricinho (Marcelo Adnet) é um gato muito esperto que inventa um golpe para ganhar dinheiro fácil..."
+            />
+            <Card
+            caminho={{uri:'https://imagemfilmes.com.br/filme/a-profecia-do-mal'}}
+            titulo="O Grande Mauricinho"
+            sinopse="Mauricinho (Marcelo Adnet) é um gato muito esperto que inventa um golpe para ganhar dinheiro fácil..."
+            
+            />
+            <Card
+            caminho={{uri:'https://capas-m.imagemfilmes.com.br/164069_000_m.jpg'}}
+            titulo="O Grande Mauricinho"
+            sinopse="Mauricinho (Marcelo Adnet) é um gato muito esperto que inventa um golpe para ganhar dinheiro fácil..."
+            />
+            <Card
+            caminho={{uri:'https://capas-m.imagemfilmes.com.br/164069_000_m.jpg'}}
+            titulo="O Grande Mauricinho"
+            sinopse="Mauricinho (Marcelo Adnet) é um gato muito esperto que inventa um golpe para ganhar dinheiro fácil..."
+            />
+        
+     
+        </View>
       </View>
     </View>
+    </ScrollView>
   );
 }
 
@@ -25,19 +45,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingTop: 10,
     marginTop: 40,
-    backgroundColor: "#fff",
+    backgroundColor: "#ecf0f1",
   },
   Conteudo: {
     flex: 1,
     backgroundColor: "#ccc",
-    paddingTop: 10,
+    paddingTop: 20,
     alignItems: "center",
     width: "100%",
+    marginTop:15,
+    
   },
-  Card: {
-    width: "40%",
-    height: 300,
-    backgroundColor: "green",
-    borderRadius: 10,
-  },
+  
 });
