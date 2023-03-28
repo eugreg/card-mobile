@@ -1,39 +1,46 @@
-import { StyleSheet, View,ScrollView } from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 import Card from "./src/components/Card";
+import Nav from "./src/components/Nav/Nav";
 
 export default function App() {
   return (
     <ScrollView>
-
-    <View style={styles.container}>
-      <View style={styles.Conteudo}>
-        <View style={styles.Card}>
-          <Card
-            caminho={{uri:'https://capas-m.imagemfilmes.com.br/164069_000_m.jpg'}}
-            titulo="O Grande Mauricinho"
-            sinopse="Mauricinho (Marcelo Adnet) é um gato muito esperto que inventa um golpe para ganhar dinheiro fácil..."
+      <Nav />
+      <View style={styles.container}>
+        <View style={styles.Conteudo}>
+          <View style={styles.main}>
+            <Card
+              caminho={{
+                uri: "https://capas-m.imagemfilmes.com.br/164069_000_m.jpg",
+              }}
+              titulo="O Grande Mauricinho"
+             
             />
             <Card
-            caminho={{uri:'https://imagemfilmes.com.br/filme/a-profecia-do-mal'}}
-            titulo="O Grande Mauricinho"
-            sinopse="Mauricinho (Marcelo Adnet) é um gato muito esperto que inventa um golpe para ganhar dinheiro fácil..."
+              caminho={{
+                uri: "https://br.web.img2.acsta.net/pictures/22/07/14/15/49/5560820.jpg",
+              }}
+              titulo="Fera"
+             
+            />
+            <Card
+              caminho={{
+                uri: "https://br.web.img3.acsta.net/c_310_420/pictures/23/02/27/22/17/0078543.jpg",
+              }}
+              titulo="Creed II"
+             
+            />
+            <Card
+              caminho={{
+                uri: "https://br.web.img3.acsta.net/c_310_420/pictures/23/03/07/17/53/2916495.jpg",
+              }}
+              titulo="SHAZAM!"
+             
+            />
             
-            />
-            <Card
-            caminho={{uri:'https://capas-m.imagemfilmes.com.br/164069_000_m.jpg'}}
-            titulo="O Grande Mauricinho"
-            sinopse="Mauricinho (Marcelo Adnet) é um gato muito esperto que inventa um golpe para ganhar dinheiro fácil..."
-            />
-            <Card
-            caminho={{uri:'https://capas-m.imagemfilmes.com.br/164069_000_m.jpg'}}
-            titulo="O Grande Mauricinho"
-            sinopse="Mauricinho (Marcelo Adnet) é um gato muito esperto que inventa um golpe para ganhar dinheiro fácil..."
-            />
-        
-     
+          </View>
         </View>
       </View>
-    </View>
     </ScrollView>
   );
 }
@@ -45,16 +52,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingTop: 10,
     marginTop: 40,
-    backgroundColor: "#ecf0f1",
+    backgroundColor: "#EFEDF4",
   },
   Conteudo: {
     flex: 1,
     backgroundColor: "#ccc",
     paddingTop: 20,
     alignItems: "center",
-    width: "100%",
-    marginTop:15,
-    
+    width: "10-0%",
   },
-  
+  main: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+  },
 });

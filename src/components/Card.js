@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 
+
 export default class Card extends Component {
   //  image  = {
   //     luffy : require(" ./fotos/luffy.jpg")
@@ -24,17 +25,17 @@ export default class Card extends Component {
 const styles = StyleSheet.create({
     titulo: {
     fontSize:20,
-    fontWeight:'bold'
+    fontWeight:'bold',
+    color: '#EFEDF4'
    
   },
-  sinopse:{
-    fontSize: 10,
-  },
+
   Card: {
-    width: "40%",
-    height: 300,
-    backgroundColor: "#0d0",
+    width: "35%",
+    height: 250,
+    backgroundColor: "black",
     borderRadius: 10,
+    margin: 12,
     
   },
 })
