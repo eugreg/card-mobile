@@ -9,33 +9,31 @@ export default class App extends Component {
     filmes : [
       {
         id: 1,
-        caminho: 'https://upload.wikimedia.org/wikipedia/pt/thumb/8/82/Pulp_Fiction_cover.jpg/230px-Pulp_Fiction_cover.jpg',
-        titulo: 'Pulp Fiction',
-        genero: 'Crime, Suspense, Humor ácido'
+        caminho: 'https://br.web.img3.acsta.net/c_310_420/pictures/23/02/27/20/23/5860378.png',
+        titulo: 'DEMON SLAYER: PARA A VILA DO ESPADACHIM ',
       },
       {
         id: 2,
-        caminho: 'https://musicart.xboxlive.com/7/c96d1100-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080',
-        titulo: 'Inception',
-        genero: 'Ação, Suspense, Drama'
+        caminho: 'https://br.web.img3.acsta.net/c_310_420/pictures/23/03/07/17/53/2916495.jpg',
+        titulo: 'SHAZAM! FÚRIA DOS DEUSES',
+      
       },
       {
         id: 3,
-        caminho: 'https://upload.wikimedia.org/wikipedia/pt/3/38/The_Batman_poster.jpg',
-        titulo: 'The Batman',
-        genero: 'Ação, Suspense, Crime'
+        caminho: 'https://br.web.img3.acsta.net/c_310_420/pictures/23/01/19/16/50/3168009.jpg',
+        titulo: 'PÂNICO 6',
       },
       {
         id: 4,
-        caminho: 'https://static.wikia.nocookie.net/filmguide/images/0/07/Fight-club-poster.jpg/revision/latest?cb=20210207224108',
-        titulo: 'Fight Club',
-        genero: 'Ação, Crime, Humor ácido'
+        caminho: 'https://br.web.img3.acsta.net/c_310_420/pictures/23/02/27/22/17/0078543.jpg',
+        titulo: 'CREED III',
+     
       },
       {
         id: 5,
-        caminho: 'https://upload.wikimedia.org/wikipedia/pt/9/97/BackFuturePoster.jpg',
-        titulo: 'Back to the Future',
-        genero: 'Ficção Científica, Aventura'
+        caminho: 'https://br.web.img2.acsta.net/c_310_420/pictures/23/02/28/18/38/4152410.jpg',
+        titulo: '65: AMEAÇA PRÉ-HISTORICA',
+       
       },
     ]
   } 
@@ -71,7 +69,7 @@ const styles = StyleSheet.create({
   },
   conteudo: {
     flex: 1,
-    backgroundColor: '#082f49',
+    backgroundColor: 'white',
     flexDirection: 'row',
     flexWrap: 'wrap',
     width: '100%'

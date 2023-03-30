@@ -10,10 +10,9 @@ export default function(props) {
       <View style={styles.Card}>
         <Image
           style={styles.filme}
-          source={props.filme.caminho}
+          source={{uri: props.filme.caminho}}
         />
         <Text style={styles.titulo}> {props.filme.titulo} </Text>
-        <Text style={styles.sinopse}>{props.filme.genero}</Text>
         <TouchableOpacity
         style={styles.button}
         onPress={props.onDelete}>
