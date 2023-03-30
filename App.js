@@ -1,69 +1,79 @@
-import { StyleSheet, View, ScrollView } from "react-native";
+import {Component} from 'react'
+import { ScrollView } from 'react-native';
+import {  View, StyleSheet } from "react-native";
 import Card from "./src/components/Card";
-import Nav from "./src/components/Nav/Nav";
+import Nav from './src/components/Nav/Nav'
 
-export default function App() {
-  return (
-    <ScrollView>
-      <Nav />
-      <View style={styles.container}>
-        <View style={styles.Conteudo}>
-          <View style={styles.main}>
-            <Card
-              caminho={{
-                uri: "https://capas-m.imagemfilmes.com.br/164069_000_m.jpg",
-              }}
-              titulo="O Grande Mauricinho"
-             
-            />
-            <Card
-              caminho={{
-                uri: "https://br.web.img2.acsta.net/pictures/22/07/14/15/49/5560820.jpg",
-              }}
-              titulo="Fera"
-             
-            />
-            <Card
-              caminho={{
-                uri: "https://br.web.img3.acsta.net/c_310_420/pictures/23/02/27/22/17/0078543.jpg",
-              }}
-              titulo="Creed II"
-             
-            />
-            <Card
-              caminho={{
-                uri: "https://br.web.img3.acsta.net/c_310_420/pictures/23/03/07/17/53/2916495.jpg",
-              }}
-              titulo="SHAZAM!"
-             
-            />
-            
-          </View>
+export default class App extends Component {
+  state = {
+    filmes : [
+      {
+        id: 1,
+        caminho: 'https://upload.wikimedia.org/wikipedia/pt/thumb/8/82/Pulp_Fiction_cover.jpg/230px-Pulp_Fiction_cover.jpg',
+        titulo: 'Pulp Fiction',
+        genero: 'Crime, Suspense, Humor ácido'
+      },
+      {
+        id: 2,
+        caminho: 'https://musicart.xboxlive.com/7/c96d1100-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080',
+        titulo: 'Inception',
+        genero: 'Ação, Suspense, Drama'
+      },
+      {
+        id: 3,
+        caminho: 'https://upload.wikimedia.org/wikipedia/pt/3/38/The_Batman_poster.jpg',
+        titulo: 'The Batman',
+        genero: 'Ação, Suspense, Crime'
+      },
+      {
+        id: 4,
+        caminho: 'https://static.wikia.nocookie.net/filmguide/images/0/07/Fight-club-poster.jpg/revision/latest?cb=20210207224108',
+        titulo: 'Fight Club',
+        genero: 'Ação, Crime, Humor ácido'
+      },
+      {
+        id: 5,
+        caminho: 'https://upload.wikimedia.org/wikipedia/pt/9/97/BackFuturePoster.jpg',
+        titulo: 'Back to the Future',
+        genero: 'Ficção Científica, Aventura'
+      },
+    ]
+  } 
+
+  deletar(pos) {
+    const filmes = [...this.state.filmes]
+    filmes.splice(pos, 1)
+    this.setState({ filmes } )    
+  }
+
+  render() {
+    return (
+      <ScrollView>
+
+      <Nav/>
+     
+        <View style={styles.conteudo}>
+          {this.state.filmes.map((filme, index) => (
+            <Card key={index} filme={filme} onDelete={() => this.deletar(index)}/>          
+            ))}
         </View>
-      </View>
-    </ScrollView>
-  );
+      
+            </ScrollView>
+    );
+  }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingTop: 10,
-    marginTop: 40,
-    backgroundColor: "#EFEDF4",
+    paddingTop: 30, 
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  Conteudo: {
+  conteudo: {
     flex: 1,
-    backgroundColor: "#ccc",
-    paddingTop: 20,
-    alignItems: "center",
-    width: "10-0%",
-  },
-  main: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "center",
+    backgroundColor: '#082f49',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    width: '100%'
   },
 });
