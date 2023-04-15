@@ -11,23 +11,26 @@ export default function renderItem({ item }) {
   useEffect(() => {
     axios.get('https://api.themoviedb.org/3/movie/popular?api_key=a37701b7a0845f3785cd83eb23add599&language=en-US&page=1')
     .then(function (response) {
-      setData(response.data);
+      setData(response.data.results);
     })
     .catch(function (error) {
           console.log(error);
         });
 
         
-      }, [], );
+      },
+   [], );
       function getPosterUrl(posterPath) {
         return `https://image.tmdb.org/t/p/w500${posterPath}`;
       }
+      const renderItem = ({ item }) => (
+        <Image source={{ getPosterUrl }} style={{ width: 200, height: 200 }} />
+      );
   return (
 <FlatList
   data={data}
-  renderItem={renderItem}
-  source={{ uri:  getPosterUrl }}
-  keyExtractor={(item) => item.id.toString()}
+  renderItem={getPosterUrl}
+  keyExtractor={item => item.id}
 />
   );
 }
