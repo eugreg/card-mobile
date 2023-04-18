@@ -1,37 +1,28 @@
-import React, { useState, useEffect,  } from 'react';
-import { FlatList } from 'react-native';
-import axios from 'axios';
-
-
-
-
+import React, { useState, useEffect } from "react";
+import { FlatList, Image } from "react-native";
+import FilmeApi from "./src/api/Filmes";
+const filmeapi = new FilmeApi();
 
 export default function renderItem({ item }) {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    axios.get('https://api.themoviedb.org/3/movie/popular?api_key=a37701b7a0845f3785cd83eb23add599&language=en-US&page=1')
-    .then(function (response) {
-      setData(response.data.results);
-    })
-    .catch(function (error) {
-          console.log(error);
-        });
+    const [filmes, setFilmes] = useState([]);
+    const fetchFilmes = async () => {
+      const items = await filmeapi.BuscaTodosOsFilmes();
+      setFilmes(items)
+    };
 
-        
-      },
-   [], );
-      function getPosterUrl(posterPath) {
-        return `https://image.tmdb.org/t/p/w500${posterPath}`;
-      }
-      const renderItem = ({ item }) => (
-        <Image source={{ getPosterUrl }} style={{ width: 200, height: 200 }} />
-      );
+    useEffect(() => {
+      fetchFilmes()
+    }, []);
+  
+
   return (
-<FlatList
-  data={data}
-  renderItem={getPosterUrl}
-  keyExtractor={item => item.id}
-/>
+    <FlatList
+      data={filmes}
+      renderItem={({ item }) => {
+        const url = `https://image.tmdb.org/t/p/w500${item.poster_path}`;
+        return <Image style={{ height: 200 }} source={{ uri: url }} />;
+      }}
+      keyExtractor={(item) => item.id}
+    />
   );
 }
-
